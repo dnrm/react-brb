@@ -1,8 +1,12 @@
 {
   "name": "react-brb",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.7",
+  "private": false,
+  "main": "dist/Brb.js",
   "dependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -12,6 +16,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/component -d dist --copy-files",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,6 +38,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
     ]
   }
 }
